@@ -9,12 +9,6 @@ macro(make_project_)
 
     project(${PROJECT} CXX)
 
-    if(MSVC)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
-    else ()
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -std=c++11")
-    endif ()
-    
     if (NOT DEFINED HEADERS)
         file(GLOB HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
     endif ()
@@ -27,10 +21,22 @@ macro(make_project_)
     source_group("Source Files" FILES ${SOURCES})
 endmacro ()
 
+macro(make_project_options_)
+    if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
+        target_compile_options(${PROJECT} PRIVATE /Wall)
+    elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+        target_compile_options(${PROJECT} PRIVATE
+            -Wall -Wextra -Werror -Wpedantic)
+    elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+        target_compile_options(${PROJECT} PRIVATE
+            -Wall -Wextra -Werror -Wpedantic)
+    endif ()
+endmacro()
+
 macro(make_executable)
     make_project_()
-    
     add_executable(${PROJECT} ${HEADERS} ${SOURCES})
+    make_project_options_()
 endmacro()
 
 function(add_all_subdirectories)
