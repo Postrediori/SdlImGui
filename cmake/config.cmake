@@ -37,6 +37,11 @@ macro(make_executable)
     make_project_()
     add_executable(${PROJECT} ${HEADERS} ${SOURCES})
     make_project_options_()
+
+    set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/bundle/${PROJECT}")
+    install(
+        TARGETS ${PROJECT}
+        DESTINATION ${CMAKE_INSTALL_PREFIX})
 endmacro()
 
 function(add_all_subdirectories)
