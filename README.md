@@ -1,6 +1,6 @@
 ## Introduction
 
-Minimal GUI example project using ImGui, SDL2, OpenGL 2.0 and CMake.
+Minimal GUI example projects using ImGui & SDL2 make with CMake.
 
 ![ImGui Example Screenshot](images/sdlimgui.png)
 
@@ -53,6 +53,14 @@ sudo dnf install -y \
     SDL2-devel
 ```
 
+### macOS systems
+
+Install SDL2 libraries using brew:
+
+```
+brew install sdl2
+```
+
 ## Building
 
 Check out sources with `--recursive` parameter for 3rd-party libraries:
@@ -64,26 +72,31 @@ git clone --recursive https://github.com/Postrediori/SdlImGui.git
 Prepare build with CMake and build executable
 
 ```
-cd SdlImGui.git
 mkdir build && cd build
-cmake ..
+cmake .. -DCMAKE_BUILD_TYPE=Release
 make
-make install
 ```
 
 ## Running
 
-Using `make install` will copy the executable to `bundle/SdlImGui` directory:
+Using `make install` will copy the executable to `bundle` directory:
 
 ```
 cd build
 make install
 ```
 
-Run the binary from `bundle/SdlImGui`:
+Run the binaries from `bundle` folder:
 
 ```
-cd bundle/SdlImGui
-./SdlImGui
-```
+cd bundle
 
+# SDL2 & OpenGL 2 demo project
+./SdlImGuiOpenGl2/SdlImGuiOpenGl2
+
+# SDL2 & OpenGL 3 demo project
+./SdlImGuiOpenGl3/SdlImGuiOpenGl3
+
+# SDL2 & SDL_Renderer demo project
+./SdlRendererImGui/SdlRendererImGui
+```
