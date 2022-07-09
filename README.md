@@ -92,11 +92,11 @@ Run the binaries from `bundle` folder:
 cd bundle
 
 # SDL2 & OpenGL 2 demo project
-./SdlImGuiOpenGl2/SdlImGuiOpenGl2
+./bundle/SdlImGuiOpenGl2
 
 # SDL2 & OpenGL 3 demo project
-./SdlImGuiOpenGl3/SdlImGuiOpenGl3
+./bundle/SdlImGuiOpenGl3
 
 # SDL2 & SDL_Renderer demo project
-./SdlRendererImGui/SdlRendererImGui
+./bundle/SdlRendererImGui
 ```
