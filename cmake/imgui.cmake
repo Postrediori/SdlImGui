@@ -7,12 +7,12 @@ set(IMGUI_BACKEND_SOURCES
     ${IMGUI_BACKENDS_DIR}/imgui_impl_opengl2.cpp
     ${IMGUI_BACKENDS_DIR}/imgui_impl_opengl3.cpp
     ${IMGUI_BACKENDS_DIR}/imgui_impl_sdl2.cpp
-    ${IMGUI_BACKENDS_DIR}/imgui_impl_sdlrenderer.cpp)
+    ${IMGUI_BACKENDS_DIR}/imgui_impl_sdlrenderer2.cpp)
 set(IMGUI_BACKEND_HEADERS
     ${IMGUI_BACKENDS_DIR}/imgui_impl_opengl2.h
     ${IMGUI_BACKENDS_DIR}/imgui_impl_opengl3.h
     ${IMGUI_BACKENDS_DIR}/imgui_impl_sdl2.h
-    ${IMGUI_BACKENDS_DIR}/imgui_impl_sdlrenderer.h)
+    ${IMGUI_BACKENDS_DIR}/imgui_impl_sdlrenderer2.h)
 
 add_library(imgui STATIC
     ${IMGUI_SOURCES} ${IMGUI_SOURCES}

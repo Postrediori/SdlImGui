@@ -20,9 +20,8 @@ To use the ImGui in a CMake project one should copy the following files:
 
 The following instructions apply to:
 
-* Ubuntu 18.04
-* Ubuntu 16.04
-* Debian 9
+* Ubuntu 24.04, 22.04, 20.04
+* Debian 12, 11
 
 ```
 sudo apt-get install -y \
@@ -100,3 +99,6 @@ cd bundle
 # SDL2 & SDL_Renderer demo project
 ./bundle/SdlRendererImGui
 ```
+
+## TODO
+* [ ] SDL3 demo project
