@@ -20,8 +20,8 @@ To use the ImGui in a CMake project one should copy the following files:
 
 The following instructions apply to:
 
-* Ubuntu 24.04, 22.04, 20.04
-* Debian 12, 11
+* Ubuntu
+* Debian
 
 ```
 sudo apt-get install -y \
@@ -33,11 +33,13 @@ sudo apt-get install -y \
     libsdl2-dev
 ```
 
+**Note**. SDL3 is not yet available as a package for Debian and Ubuntu based systems. On this systems one must install SDL3 from sources.
+
 ### RedHat-based Systems
 
 The following instructions apply to:
 
-* Fedora 22 and higher
+* Fedora
 
 ```
 sudo dnf install -y \
@@ -49,15 +51,16 @@ sudo dnf install -y \
     libXcursor-devel \
     libXi-devel \
     freetype-devel \
-    SDL2-devel
+    SDL2-devel \
+    SDL3-devel
 ```
 
 ### macOS systems
 
-Install SDL2 libraries using brew:
+Install SDL2 & SDL3 libraries using brew:
 
 ```
-brew install sdl2
+brew install sdl2 sdl3
 ```
 
 ## Building
@@ -101,4 +104,5 @@ cd bundle
 ```
 
 ## TODO
-* [ ] SDL3 demo project
+* [X] SDL3 demo project
+* [ ] Update SDL3 installaiton instructions for Debian and Ubuntu when the packages will be released.
